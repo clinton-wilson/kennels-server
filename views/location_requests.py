@@ -1,3 +1,6 @@
+from re import L
+
+
 LOCATIONS = [
     {
         "id": 1,
@@ -52,4 +55,10 @@ def delete_location(id):
 
     if location_index >= 0:
         LOCATIONS.pop(location_index)
+
+def update_location(id, new_location):
+    for index, location in enumerate(LOCATIONS):
+        if location["id"] == id:
+            LOCATIONS[index] = new_location
+            break
         
